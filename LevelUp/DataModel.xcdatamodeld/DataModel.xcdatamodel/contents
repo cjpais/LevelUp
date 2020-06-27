@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="timeSpentSeconds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="timeIntervals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeInterval" inverseName="activity" inverseEntity="TimeInterval"/>
+    </entity>
+    <entity name="TimeInterval" representedClassName="TimeInterval" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="timeIntervals" inverseEntity="Activity"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="TimeInterval" positionX="-54" positionY="9" width="128" height="88"/>
+    </elements>
+</model>
